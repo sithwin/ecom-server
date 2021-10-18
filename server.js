@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
+
+const authRoutes = require("./routes/auth");
+
 require("dotenv").config();
 
 // app
@@ -22,11 +25,7 @@ app.use(express.json({ limit: "2mb" }));
 app.use(cors());
 
 // route
-app.get("/api", (req, res) => {
-  res.json({
-    data: "Hit node api new upgrade",
-  });
-});
+app.use("/api", authRoutes);
 
 // port
 const port = process.env.PORT || 8000;
