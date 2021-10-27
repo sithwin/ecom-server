@@ -1,5 +1,4 @@
-import User from "../models/user";
-
+const User = require("../models/user");
 const admin = require("../firebase");
 
 exports.authCheck = async (req, res, next) => {
