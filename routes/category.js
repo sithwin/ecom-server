@@ -16,7 +16,7 @@ const {
 
 // routes
 router.get("/categories", list);
-router.get("/categories/:slug", authCheck, adminCheck, read);
+router.get("/categories/:slug", authCheck, read);
 router.post("/categories", authCheck, adminCheck, create);
 router.put("/categories/:slug", authCheck, adminCheck, update);
 router.delete("/categories/:slug", authCheck, adminCheck, remove);
